@@ -6,7 +6,7 @@ public class MovieManager {
     private int limit;
 
     public MovieManager() {
-        this.limit = 8;
+        this.limit = 7;
     }
 
     public MovieManager(int limit) {

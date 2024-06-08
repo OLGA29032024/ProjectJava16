@@ -7,7 +7,7 @@ public class MovieManagerTest {
 
     @Test
     public void addMovie() {
-        ru.netology.movie.MovieManager manager = new ru.netology.movie.MovieManager();
+        MovieManager manager = new MovieManager();
         String[] expected = {};
         String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
@@ -15,7 +15,7 @@ public class MovieManagerTest {
 
     @Test
     public void oneAddMovie() {
-        ru.netology.movie.MovieManager manager = new ru.netology.movie.MovieManager();
+        MovieManager manager = new MovieManager();
 
         manager.addMovie("Бладшот");
 
@@ -26,8 +26,8 @@ public class MovieManagerTest {
     }
 
     @Test
-    public void fourAddMovie() {
-        ru.netology.movie.MovieManager manager = new ru.netology.movie.MovieManager();
+    public void sevenAddMovie() {
+        MovieManager manager = new MovieManager();
 
         manager.addMovie("Бладшот");
         manager.addMovie("Вперёд");
@@ -45,7 +45,7 @@ public class MovieManagerTest {
 
     @Test
     public void findLast() {
-        ru.netology.movie.MovieManager manager = new ru.netology.movie.MovieManager();
+        MovieManager manager = new MovieManager();
 
         manager.addMovie("Бладшот");
         manager.addMovie("Вперёд");
@@ -59,5 +59,32 @@ public class MovieManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
-}
 
+    @Test
+    public void fourAddMovie() {
+        MovieManager manager = new MovieManager();
+
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперёд");
+        manager.addMovie("Отель Белград");
+        manager.addMovie("Джентельмены");
+
+        String[] expected = {"Бладшот", "Вперёд", "Отель Белград", "Джентельмены"};
+        String[] actual = manager.findAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void fourfindLast() {
+        MovieManager manager = new MovieManager();
+
+        manager.addMovie("Бладшот");
+        manager.addMovie("Вперёд");
+        manager.addMovie("Отель Белград");
+        manager.addMovie("Джентельмены");
+        
+        String[] expected = {"Джентельмены", "Отель Белград", "Вперёд", "Бладшот"};
+        String[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+}
